@@ -1,0 +1,4 @@
+rails-paypal-*.gem
+.DS_Store
+*~
+Gemfile.lock
