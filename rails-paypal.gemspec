@@ -1,4 +1,4 @@
-require './lib/twilio-ruby/version'
+require './lib/rails-paypal/version'
 Gem::Specification.new do |s|
   s.name        = 'rails-paypal'
   s.version     =  RailsPaypal::VERSION
