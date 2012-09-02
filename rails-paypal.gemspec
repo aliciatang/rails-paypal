@@ -1,4 +1,5 @@
-require './lib/rails-paypal/version'
+# -*- encoding: utf-8 -*-
+require File.expand_path("../lib/rails-paypal/version", __FILE__)
 Gem::Specification.new do |s|
   s.name        = 'rails-paypal'
   s.version     =  RailsPaypal::VERSION
