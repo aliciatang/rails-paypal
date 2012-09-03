@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ExpressCheckoutTest < Test::Unit::TestCase
 	def test_call_success
-		ret =RailsPaypal::ExpressCheckout.new([{:name=>'item 1',:price=>'5.0',:quantity=> 4}])
+		ret = RailsPaypal::ExpressCheckout.new([{:name=>'item 1',:price=>'5.0',:quantity=> 4}])
         assert_nothing_raised do
             ret.set_token
         end

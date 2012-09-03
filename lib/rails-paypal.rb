@@ -1,5 +1,4 @@
 require 'httparty'
-
 require 'rails-paypal/nvp-parser'
 class RailsPaypal
   include HTTParty
@@ -30,3 +29,4 @@ class RailsPaypal
     ret.parsed_response
   end
 end
+require 'services/express_checkout'
