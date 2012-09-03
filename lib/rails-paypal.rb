@@ -1,7 +1,15 @@
 require 'httparty'
 
+require 'rails-paypal/nvp-parser'
 class RailsPaypal
   include HTTParty
+
+  base_uri "https://api-3t.sandbox.paypal.com/nvp"
+  
+
+  parser NvpParsingIncluded
+
+  format :nvp
 #  move thise to a config file 
 #  debug_output   # turn on httparty debuy
 #  default_timeout 100
@@ -18,8 +26,9 @@ class RailsPaypal
             :RETURNURL => 'http://return.com',
             :CANCELURL => 'http://cancel.com'
   }
-  base_uri "https://api-3t.sandbox.paypal.com/nvp"
+  
   def self.call(data)
-    post('/', :body => PARAMS.merge(data) )
+    ret = post('/', :body => PARAMS.merge(data))
+    ret.parsed_response
   end
 end
