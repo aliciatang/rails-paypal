@@ -3,16 +3,14 @@ require 'httparty'
 require 'rails-paypal/nvp-parser'
 class RailsPaypal
   include HTTParty
-
   base_uri "https://api-3t.sandbox.paypal.com/nvp"
-  
-
+  # custom parser must be signed before set the format
   parser NvpParsingIncluded
-
+  # the response format
   format :nvp
-#  move thise to a config file 
-#  debug_output   # turn on httparty debuy
+#  debug_output # turn on httparty debuy
 #  default_timeout 100
+#  TODO move thise to a config file 
   URLS = {
     :sandbox => 'api-3t.sandbox.paypal.com/nvp', 
     :production =>'api-3t.paypal.com/nvp',
