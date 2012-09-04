@@ -11,8 +11,8 @@ class RailsPaypal
 #  default_timeout 100
 #  TODO move thise to a config file 
   URLS = {
-    :sandbox => 'api-3t.sandbox.paypal.com/nvp', 
-    :production =>'api-3t.paypal.com/nvp',
+    :sandbox => 'https://api-3t.sandbox.paypal.com/nvp', 
+    :production =>'https://api-3t.paypal.com/nvp',
     :checkout => 'https://www.sandbox.paypal.com/cgi-bin/webscr'
   }
   # wish httparty have something similar for default_params for body data
