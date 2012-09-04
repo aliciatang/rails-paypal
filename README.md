@@ -42,6 +42,18 @@ Step Tree: hope your user finish the payment on paypal site.
 
 If they do, they may or may not click the back to store button on paypay, so better not bet on that. 
 So from what I have read, IPN could be the way out to know if they paid. And if they do, you can start diliver your product now.
+I had hard time go recieve IPN callback for serveral reasons:
 
+1. I have to have a public accessable url for sure. localhost will certainly not work. So I have to push the code to public servers(heroku) in order to test it.
+2. The sandbox IPN by no means instant! Not sure how long it will take.
 
+Step Four: get the payment status
+
+Either heard back from IPN or you check it after timeout. Call paypal with the token got in step one to find out the status.
+
+    ec.get
+    # or use the static method
+    RailsPaypal::ExpressCheckout.get("YOURTOKEN")
+
+    
 
