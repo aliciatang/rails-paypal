@@ -38,7 +38,7 @@ Step Two: rediret the end user to paypal
      # But you do need to pass the list of line items to the construtor, since we need to call paypal for the token
      ec.redirect_url
 
-Step Tree: hope your user finishe the payment in paypal site.
+Step Tree: hope your user finish the payment on paypal site.
 
 If they do, they may or may not click the back to store button on paypay, so better not bet on that. 
 So from what I have read, IPN could be the way out to know if they paid. And if they do, you can start diliver your product now.
