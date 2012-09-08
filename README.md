@@ -44,12 +44,12 @@ If they do, they will be redirected to the return_url you specified in step one 
 
     your_return_url/?token=EC-3EC18176EP034311U&PayerID=TPCS2TXJU979S
 
-In the controller for the above url, you can get the payment info by calling the get method to get what the actual amount was paid.
-And of course you can get invoice id you specified in step one as well so you know which order you should mark as paid and deliver just in case you did not pass the order id in the return_url already.
+In the controller for the above url, now is the time for you to capture the $$. That's all it is about, isn't it?
 
-    ec.get
+    ec.do
     # or use the static method
-    RailsPaypal::ExpressCheckout.get("YOURTOKEN")
+    RailsPaypal::ExpressCheckout.do("YOURTOKEN")
+    
 
 Step Four: There is no step 4! How nice is that!
 
@@ -59,6 +59,15 @@ If you only care about the case you got the money, there is nothing you need to 
 No action is not a bad action to take.
 In case you do wanna be noticed when the user abandon the cart or at lease log it. There another url you passed to paypay in step 1 when setting up express checkout.
 And we could do something about it.
+
+A little bit more accurate.
+Verify payment info by calling the get method to get what the actual amount was paid.
+And of course you can get invoice id you specified in step one as well so you know which order you should mark as paid and deliver just in case you did not pass the order id in the return_url already.
+
+    ec.get
+    # or use the static method
+    RailsPaypal::ExpressCheckout.get("YOURTOKEN")
+
 
     
 
