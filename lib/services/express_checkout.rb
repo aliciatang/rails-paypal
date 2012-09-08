@@ -36,5 +36,18 @@ class RailsPaypal::ExpressCheckout < RailsPaypal
   def self.get(token)
      call({"TOKEN"=>token, "METHOD"=>"GetExpressCheckoutDetails" })
   end
+  def self.do(token, payer_id, amount)
+     ret = call({
+       "TOKEN"=>token, 
+       "PAYERID"=>payer_id, 
+       "AMT" =>amount,
+       "PAYMENTACTION"=>'Sale',
+       "METHOD"=>"DoExpressCheckoutPayment" })
+     if ret["PAYMENTSTATUS"] == 'Completed'
+        ret["TRANSACTIONID"]
+     else
+        puts "#{ret.inspect}"
+     end
+  end
 
 end

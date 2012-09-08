@@ -26,8 +26,8 @@ class ExpressCheckoutTest < Test::Unit::TestCase
 		ret = RailsPaypal::ExpressCheckout.new([{:name=>'item 1',:price=>'5.0',:quantity=> 4}])
     assert_not_nil ret.redirect_url
 	end
-  def test_get_paid_success
-    ret = RailsPaypal::ExpressCheckout::get('EC-3EC18176EP034311U')
-    assert_equal "Success",  ret["ACK"]
+  def test_do_payment
+    ret = RailsPaypal::ExpressCheckout::do('EC-3EC18176EP034311U','TPCS2TXJU979S', '20.00')
+    assert_not_nil ret
   end
 end
