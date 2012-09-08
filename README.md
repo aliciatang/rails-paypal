@@ -40,20 +40,18 @@ Step Two: rediret the end user to paypal
 
 Step Tree: hope your user finish the payment on paypal site.
 
-If they do, they may or may not click the back to store button on paypay, so better not bet on that. 
-So from what I have read, IPN could be the way out to know if they paid. And if they do, you can start diliver your product now.
-I had hard time go recieve IPN callback for serveral reasons:
+If they do, they will be redirected to the return_url you specified in step one with two parameters: token and PayerID
 
-1. I have to have a public accessable url for sure. localhost will certainly not work. So I have to push the code to public servers(heroku) in order to test it.
-2. The sandbox IPN by no means instant! Not sure how long it will take.
+    your_return_url/?token=EC-3EC18176EP034311U&PayerID=TPCS2TXJU979S
 
-Step Four: get the payment status
-
-Either heard back from IPN or you check it after timeout. Call paypal with the token got in step one to find out the status.
+In the controller for the above url, you can get the payment info by calling the get method to get what the actual amount was paid.
+And of course you can get invoice id you specified in step one as well so you know which order you should mark as paid and deliver just in case you did not pass the order id in the return_url already.
 
     ec.get
     # or use the static method
     RailsPaypal::ExpressCheckout.get("YOURTOKEN")
+
+Step Four: There is no step 4! How nice is that!
 
     
 
