@@ -48,7 +48,7 @@ In the controller for the above url, now is the time for you to capture the $$. 
 
     ec.do
     # or use the static method
-    RailsPaypal::ExpressCheckout.do("YOURTOKEN")
+    RailsPaypal::ExpressCheckout.do("YOURTOKEN","TPCS2TXJU979S","20.00")
     
 
 Step Four: There is no step 4! How nice is that!
