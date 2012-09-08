@@ -53,5 +53,12 @@ And of course you can get invoice id you specified in step one as well so you kn
 
 Step Four: There is no step 4! How nice is that!
 
+----------
+Hand on there, you cautch me! Yes, in step 3 I have an if condition but no else. Which is pretty bad!
+If you only care about the case you got the money, there is nothing you need to do. 
+No action is not a bad action to take.
+In case you do wanna be noticed when the user abandon the cart or at lease log it. There another url you passed to paypay in step 1 when setting up express checkout.
+And we could do something about it.
+
     
 
